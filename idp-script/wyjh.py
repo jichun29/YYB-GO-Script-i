@@ -785,10 +785,24 @@ def run_account(account: Account) -> Tuple[bool, str]:
 
 
 def send_notification(content: str) -> None:
+    if not content.strip():
+        return
     try:
+        # 青龙的 notify.py 通常位于 /ql/data/scripts；仓库子目录运行时该目录
+        # 不一定在 sys.path 中，因此同时兼容脚本同目录和青龙公共脚本目录。
+        notify_dirs = [
+            os.path.dirname(os.path.abspath(__file__)),
+            "/ql/data/scripts",
+            "/ql/scripts",
+        ]
+        for notify_dir in notify_dirs:
+            if os.path.isfile(os.path.join(notify_dir, "notify.py")) and notify_dir not in sys.path:
+                sys.path.insert(0, notify_dir)
+
         from notify import send  # type: ignore
 
         send("无忧计划每日任务", content)
+        log("青龙通知调用完成")
     except Exception as exc:
         log(f"通知模块不可用，跳过推送：{exc}")
 
@@ -805,15 +819,20 @@ def run_account_worker(index: int, total: int, account: Account) -> Tuple[int, b
 def main() -> int:
     raw = os.getenv("WYJH") or ""
     if not raw.strip():
-        log("未配置环境变量 WYJH，格式：手机号#密码 或 手机号#密码#device_id")
+        message = "未配置环境变量 WYJH，格式：手机号#密码 或 手机号#密码#device_id"
+        log(message)
+        send_notification(f"任务未执行：{message}")
         return 1
     try:
         accounts = parse_accounts(raw)
     except ValueError as exc:
         log(str(exc))
+        send_notification(f"任务未执行：{exc}")
         return 1
     if not accounts:
-        log("wy_account中没有有效账号")
+        message = "WYJH 中没有有效账号"
+        log(message)
+        send_notification(f"任务未执行：{message}")
         return 1
 
     total = len(accounts)
