@@ -6,6 +6,7 @@ name: 飞猪签到
 定时: 每天一次
 cron: 16 8 * * *
 依赖: requests
+作者：lcmovie https://github.com/lcmovie
 ------------更新日志------------
 2026/8/21 V1.0 基于微信小程序 HAR 初始化，接入 YYB-Go-Enhanced 多账号取码
 2026/8/21 V1.1 修正飞猪登录成功码为 100，增加登录凭据完整性校验
