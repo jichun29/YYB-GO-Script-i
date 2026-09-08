@@ -8,8 +8,7 @@ YYB_SERVER: 服务地址@账号ID或OpenID，多账号换行；可直接复用�
 CH_AGGR_ID: 可选，手动指定签到活动ID；默认从首页“签到”菜单发现。
 CH_NOTIFY: 默认1，设0关闭通知。
 CH_IPV4_ONLY: 默认1；规避部分容器AAAA解析失败，设0恢复双栈解析。
-依据 2026-09-08 HAR 编写。首次请在小程序完成手机号授权/注册。
-不保存HAR中的凭据。2026-09-08 已在qinglong-2完成5账号实测。
+作者：lcmovie https://github.com/lcmovie
 """
 
 import base64
