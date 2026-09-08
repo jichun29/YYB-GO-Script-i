@@ -48,6 +48,7 @@ ql repo "https://github.com/lcmovie/YYB-GO-Script-i.git" "^(wx-script|idp-script
 | 小米社区签到 | `miqd.py` |
 | 中通快递 | `ztkd.py` |
 | 京东快递 | `jdkd.py` |
+| 长虹智慧家 | `chzhjj.py` |
 
 使用前请先部署 YYB-Go-Enhanced，并按各脚本文件头部说明配置 `YYB_SERVER` 等环境变量。
 
@@ -63,6 +64,7 @@ ql repo "https://github.com/lcmovie/YYB-GO-Script-i.git" "^(wx-script|idp-script
 | 微软积分 | `Microsoft Rewards.js` |
 | 无忧计划 | `wyjh.py` |
 | 移动云盘 | `ydyp.py` |
+| 元宝AI打卡 | `yb.py` |
 
 各脚本所需环境变量、依赖和定时规则请查看对应文件头部说明。
 
