@@ -11,6 +11,8 @@ cron: 17 8 * * *
   JDEXPRESS_ACCOUNT_LIMIT  可选，仅运行前 N 个账号（用于测试）
   JDEXPRESS_REF_FILTER  可选，仅运行指定账号标识（用于测试）
 
+作者：lcmovie https://github.com/lcmovie
+
 依赖：requests（青龙“依赖管理”中安装 Python3 依赖 requests）
 通知：优先使用青龙内置 notify.py，兼容仓库 SendNotify.py
 
