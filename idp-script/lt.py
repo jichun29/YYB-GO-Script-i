@@ -29,7 +29,7 @@ chinaUnicomCookie抓取
 1.需要在联通APP中选择退出登录-切换账号登录, 捉下面这个包
 https://m.client.10010.com/mobileService/onLine.htm
 把请求体(body)里面的token_online参数填到变量 chinaUnicomCookie
-2.登陆网址抓取https://pan.quark.cn/s/c447a407f76d
+2.登陆网址抓取https://get-cookie.mxzu.net/
 
 
 配置说明:
