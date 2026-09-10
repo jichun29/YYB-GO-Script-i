@@ -24,7 +24,7 @@ v5.0.6:
 格式：Authorization值#手机号
 抓包获取 Authorization方法：
 1.登录https://yun.139.com，cookie中找到Authorization字段，复制其值。
-2.登陆网址抓取https://pan.quark.cn/s/c447a407f76d
+2.登陆网址抓取https://sm.linzixuan.top/
 
 ⚠️ 依赖安装:
 pip3 install requests pycryptodome
