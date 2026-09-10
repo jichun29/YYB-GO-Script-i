@@ -6636,6 +6636,10 @@ def do_notify(users):
     if notify_content:
         content = "\n".join(notify_content)
         try:
+            # 青龙订阅脚本位于子目录时，notify.py 不在 Python 默认搜索路径中。
+            for notify_dir in ("/ql/data/scripts", "/ql/scripts"):
+                if os.path.isfile(os.path.join(notify_dir, "notify.py")) and notify_dir not in sys.path:
+                    sys.path.insert(0, notify_dir)
             from notify import send
 
             send(f"中国联通 {SCRIPT_VERSION}", content)
