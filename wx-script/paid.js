@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// name: 平安i动
 'use strict';
 /*
  * 平安i动 (Ping An iDong) 健康币脚本  —  平安i动.js
